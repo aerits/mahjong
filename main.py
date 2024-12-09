@@ -3,11 +3,14 @@ import requests
 import math
 
 # Replace with your actual API key and spreadsheet ID
-global api_key
+# global api_key
+secrets = []
 with open("secrets.txt") as file:
     for line in file:
-        api_key = line
-spreadsheet_id = '1Fd3JBTH--_wlR4b8BhB0Je9vf8JYZf7bO4TtGiaoPYY'
+        secrets.append(line)
+
+api_key = str(secrets[0]).strip()
+spreadsheet_id = str(secrets[1]).strip()
 
 url = "https://api.sheetson.com/v2/sheets/Sheet1/"
 
